@@ -1,0 +1,27 @@
+<h2>{{ student.name }}</h2>
+
+<p><b>Email:</b> {{ student.gmail }}</p>
+<p><b>Department:</b> {{ student.department }}</p>
+<p><b>Semester:</b> {{ student.semester }}</p>
+
+<canvas id="adminChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+fetch("/admin/api/student-attendance/{{ student.gmail }}")
+.then(res => res.json())
+.then(data => {
+  new Chart(document.getElementById("adminChart"), {
+    type: "bar",
+    data: {
+      labels: data.subjects.map(s => s.code),
+      datasets: [{
+        label: "Attendance %",
+        data: data.subjects.map(s => s.percentage),
+        backgroundColor: "#4f46e5"
+      }]
+    },
+    options: { scales: { y: { max: 100 } } }
+  });
+});
+</script>

@@ -1,0 +1,19 @@
+<h2>Students</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Department</th>
+    <th>Semester</th>
+  </tr>
+
+  {% for s in students %}
+  <tr onclick="location.href='/admin/student/{{ s.gmail }}'">
+    <td>{{ s.name }}</td>
+    <td>{{ s.gmail }}</td>
+    <td>{{ s.department }}</td>
+    <td>{{ s.semester }}</td>
+  </tr>
+  {% endfor %}
+</table> 

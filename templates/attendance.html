@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='attendance.css') }}">
+
+<div class="student-card">
+  <div>
+    <div class="student-name" id="studentName"></div>
+    <div class="student-info" id="studentInfo"></div>
+  </div>
+</div>
+
+<div class="title-row">
+  <h2 id="attTitle">Attendance %</h2>
+</div>
+
+<div class="chart-card">
+  <div class="chart-wrapper">
+    <canvas id="attendanceChart"></canvas>
+  </div>
+</div>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Select Institution – RCET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #e6f4ff;
+  }
+
+  /* Header */
+  .header {
+    padding: 20px 40px;
+  }
+
+  .logo {
+    height: 36px;
+  }
+
+  /* Center container */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 16px;
+  }
+
+  /* Card */
+  .card {
+    width: 100%;
+    max-width: 520px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 36px 32px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .card h2 {
+    margin: 0 0 28px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #0a2540;
+  }
+
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0a2540;
+    margin-bottom: 6px;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #d6dbe1;
+    border-radius: 4px;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #3f51b5;
+  }
+
+  /* Info box */
+  .info-box {
+    margin-top: 12px;
+    background: #e6f4ff;
+    color: #026aa7;
+    padding: 10px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    display: none;
+  }
+
+  /* Dropdown */
+  .dropdown {
+    margin-top: 4px;
+    border: 1px solid #65a6f5;
+    border-radius: 4px;
+    background: #ffffff;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+  }
+
+  .dropdown div {
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #0a2540;
+  }
+
+  .dropdown div:hover {
+    background: #47a8dd;
+    color: #ffffff;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+  <!-- ✅ FIXED IMAGE PATH -->
+  <img src="{{ url_for('static', filename='image.png') }}" class="logo" alt="RCET Logo" />
+</div>
+
+<!-- Card -->
+<div class="container">
+  <div class="card">
+    <h2>Select one of the Rohini institution</h2>
+
+    <label for="institution">Institution</label>
+    <input type="text" id="institution" autocomplete="off" />
+
+    <div class="dropdown" id="dropdown"></div>
+
+    <div class="info-box" id="infoBox">
+      Please type your Institution name to search.
+      You can type the first 3 letters of your Institution
+      to see the list.
+    </div>
+  </div>
+</div>
+
+<script>
+  const institutions = [
+    "Rohini College of Engineering & Technology",
+    "Rohini College Of Engineering & Technology (Diploma)",
+    "Rohini Group of Institutions",
+    "Rohini Polytechnic College",
+    "Rohini Institute of Technology"
+  ];
+
+  const input = document.getElementById("institution");
+  const dropdown = document.getElementById("dropdown");
+  const infoBox = document.getElementById("infoBox");
+
+  input.addEventListener("input", () => {
+    const value = input.value.trim().toLowerCase();
+    dropdown.innerHTML = "";
+    dropdown.style.display = "none";
+
+    if (value.length < 3) {
+      infoBox.style.display = value.length > 0 ? "block" : "none";
+      return;
+    }
+
+    infoBox.style.display = "none";
+
+    const results = institutions.filter(i =>
+      i.toLowerCase().includes(value)
+    );
+
+    if (results.length) {
+      dropdown.style.display = "block";
+      results.forEach(item => {
+        const div = document.createElement("div");
+        div.textContent = item;
+
+        div.onclick = () => {
+          // Save selected college
+          localStorage.setItem("selectedInstitution", item);
+
+          // ✅ FLASK ROUTE (NOT login.html)
+          window.location.href = "/login";
+        };
+
+        dropdown.appendChild(div);
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

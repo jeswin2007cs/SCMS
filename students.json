@@ -1,0 +1,18 @@
+{
+  "students": [
+    {
+      "gmail": "jeswin2007cs@gmail.com",
+      "password": "1234",
+      "name": "JESWIN C S ",
+      "dob": "08-04-2007",
+      "photo": "photos/jeswin.jpg",
+      "department": "CSE(AI & ML)",
+      "semester": "04",
+      "bloodGroup": "B+",
+      "parentName": "Chandrakumar C",
+      "parentPhone": "97903xxxxxx",
+      "college": "Rohini College of Engineering & Technology",
+      "year": "2025-2026"
+    }
+  ]
+}

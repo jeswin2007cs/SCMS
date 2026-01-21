@@ -1,0 +1,65 @@
+*{box-sizing:border-box;font-family:Segoe UI,Arial}
+body{margin:0;background:#f4f6f8;color:#1f2937}
+
+.student-card{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.student-name{
+  font-weight:600;
+}
+
+.student-info{
+  font-size:13px;
+  color:#6b7280;
+}
+
+.title-row{
+  margin-top:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.chart-card{
+  margin-top:20px;
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+}
+
+.chart-wrapper{
+  max-width:720px;
+  height:260px;
+  margin:auto;
+}
+
+canvas{
+  width:100%!important;
+  height:100%!important;
+}
+.subject-list {
+  margin-top: 16px;
+}
+
+.subject-item {
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.subject-name {
+  font-weight: 600;
+}
+
+.subject-percent {
+  font-weight: 700;
+  color: #2563eb;
+}

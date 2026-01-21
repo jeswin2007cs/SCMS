@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;font-family:'Inter',sans-serif}
+body{margin:0;background:#f6f7fb;color:#1f2937}
+
+.layout{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  min-height:100vh;
+}
+
+/* Sidebar */
+.sidebar{
+  background:#fff;
+  border-right:1px solid #e5e7eb;
+  padding:16px;
+}
+.sidebar-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:24px;
+}
+.sidebar-logo img{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+}
+
+.menu a{
+  display:block;
+  padding:10px 14px;
+  border-radius:8px;
+  font-size:14px;
+  color:#374151;
+  text-decoration:none;
+  margin-bottom:6px;
+  cursor:pointer;
+}
+.menu a.active{
+  background:#e8f1ff;
+  color:#1e40af;
+  font-weight:600;
+}
+
+/* Main */
+.main{
+  padding:20px 28px;
+}
+
+/* Topbar */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.profile-mini{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:600;
+}
+
+/* Card */
+.card{
+  background:#fff;
+  border-radius:12px;
+  border:1px solid #e5e7eb;
+  margin-top:18px;
+}
+
+.card-header{
+  padding:16px;
+  background:#eef4ff;
+  border-radius:12px 12px 0 0;
+}
+
+.card-body{
+  padding:16px;
+}
+
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px;
+}
+
+.stat{
+  background:#f8fafc;
+  border-radius:10px;
+  padding:16px;
+  border:1px solid #e5e7eb;
+}
+
+.stat b{
+  display:block;
+  font-size:22px;
+  margin-top:6px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <img src="{{ url_for('static', filename='image.png') }}">
+    <b>Admin</b>
+  </div>
+
+  <div class="menu">
+    <a class="active">Dashboard</a>
+    <a href="/admin/students">Students</a>
+    <a href="/admin/courses">Courses</a>
+    <a href="/admin/attendance">Attendance</a>
+    <a href="/admin/leaves">Leave Requests</a>
+    <a href="/logout">Logout</a>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div>Rohini College of Engineering & Technology</div>
+    <div class="profile-mini">
+      {{ admin.name }}
+    </div>
+  </div>
+
+  <!-- DASHBOARD CONTENT -->
+  <div class="card">
+    <div class="card-header">
+      <b>Admin Overview</b>
+    </div>
+
+    <div class="card-body">
+      <div class="stat-grid">
+
+        <div class="stat">
+          Total Students
+          <b>{{ stats.students }}</b>
+        </div>
+
+        <div class="stat">
+          Total Courses
+          <b>{{ stats.courses }}</b>
+        </div>
+
+        <div class="stat">
+          Leave Requests
+          <b>{{ stats.leaves }}</b>
+        </div>
+
+        <div class="stat">
+          Departments
+          <b>{{ stats.departments }}</b>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "courses": [
+    {
+      "id": "CS401",
+      "name": "Machine Learning",
+      "department": "CSE(AI & ML)",
+      "semester": "04"
+    },
+    {
+      "id": "CS402",
+      "name": "Data Mining",
+      "department": "CSE(AI & ML)",
+      "semester": "04"
+    }
+  ]
+}

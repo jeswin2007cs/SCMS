@@ -1,0 +1,19 @@
+[
+  {
+    "type": "Workshop",
+    "from": "2026-01-20",
+    "to": "2026-01-20",
+    "reason": "ripple",
+    "id": 1768876917,
+    "studentEmail": "jeswin2007cs@gmail.com",
+    "status": "Approved"
+  },
+  {
+    "studentEmail": "jeswin2007cs@gmail.com",
+    "type": "Sick leave",
+    "from": "2026-01-19",
+    "to": "2026-01-19",
+    "reason": "Fever",
+    "status": "A"
+  }
+]

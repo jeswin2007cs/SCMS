@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='leave.css') }}">
+
+<div class="leave-page">
+
+  <div class="leave-top">
+    <h2>Leave</h2>
+    <button class="apply-btn" id="openLeaveBtn">+ Apply leave</button>
+  </div>
+
+  <div id="leaveForm" class="leave-form hidden">
+    <h3>Apply Leave</h3>
+
+    <label>Leave type</label>
+    <select id="type">
+      <option value="">Type of leave</option>
+      <option>Sick leave</option>
+      <option>Personal leave</option>
+      <option>Workshop</option>
+      <option>Symposium</option>
+    </select>
+
+    <div class="date-row">
+      <div>
+        <label>From date</label>
+        <input type="date" id="from">
+      </div>
+      <div>
+        <label>To date</label>
+        <input type="date" id="to">
+      </div>
+    </div>
+
+    <label>Reason for leave</label>
+    <textarea id="reason"></textarea>
+
+    <div class="form-actions">
+      <button type="button" id="cancelLeaveBtn">Cancel</button>
+      <button type="button" class="apply-btn" id="applyLeaveBtn">Apply</button>
+    </div>
+  </div>
+
+  <div class="leave-history">
+    <h3>Leave History</h3>
+    <div id="history"></div>
+  </div>
+
+</div>

@@ -1,0 +1,16 @@
+{
+  "records": [
+    {
+      "studentEmail": "jeswin2007cs@gmail.com",
+      "courseId": "CS401",
+      "present": 30,
+      "total": 45
+    },
+    {
+      "studentEmail": "jeswin2007cs@gmail.com",
+      "courseId": "CS402",
+      "present": 48,
+      "total": 48
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+.leave-page{
+  background:#f5f7fa;
+  padding:20px;
+}
+
+.leave-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.leave-top h2{
+  font-size:20px;
+  font-weight:600;
+}
+
+.apply-btn{
+  background:#1e88e5;
+  color:#fff;
+  border:none;
+  padding:8px 16px;
+  border-radius:20px;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.leave-form,
+.leave-history{
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  margin-bottom:20px;
+}
+
+.leave-form h3,
+.leave-history h3{
+  margin-bottom:16px;
+  font-size:16px;
+}
+
+label{
+  font-size:13px;
+  display:block;
+  margin-top:12px;
+}
+
+input, select, textarea{
+  width:100%;
+  padding:8px;
+  margin-top:6px;
+  font-size:14px;
+  border:1px solid #dcdfe6;
+  border-radius:6px;
+}
+
+textarea{height:70px}
+
+.date-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.form-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-top:20px;
+}
+
+.hidden{display:none}
+
+.leave-item{
+  padding:14px;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  margin-top:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.leave-item b{
+  display:block;
+  font-size:14px;
+}
+
+.status{
+  font-size:12px;
+  padding:4px 12px;
+  border-radius:20px;
+}
+
+.Pending{
+  background:#fff3cd;
+  color:#856404;
+}
+
+.Approved{
+  background:#d1e7dd;
+  color:#0f5132;
+}
+
+.Rejected{
+  background:#f8d7da;
+  color:#842029;
+}
